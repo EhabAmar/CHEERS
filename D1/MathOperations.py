@@ -1,14 +1,13 @@
-
 class MathOperation():
     PRECISION = 9
-
+#method to calculate the value of a exponential number
     @staticmethod
     def powers(base=float, exp=int):
         result = 1.0;
         for i in range(0, exp):
             result *= base
         return result;
-
+#method for performing the factorial on a given number
     @staticmethod
     def factorials(input=int):
         if (input == 0 or input == 1):
@@ -21,7 +20,7 @@ class MathOperation():
         while start < stop:
             yield start
             start += step
-
+#method to calculate the value of pi
     @staticmethod
     def pi():
         n = MathOperation.powers(10, 5);
