@@ -32,7 +32,7 @@ class MathOperation():
             sign *= -1;
         pi = 3 + (4 * temp);
         return pi;
-
+#method to calculate the sin value
     @staticmethod
     def sin(input=float):
         result = input;
@@ -42,7 +42,7 @@ class MathOperation():
             else:
                 result -= MathOperation.powers(input, 2 * i + 1) / MathOperation.factorials(2 * i + 1);
         return result
-
+#method to calculate the cos value
     @staticmethod
     def cos(input=float):
         result = 1.0;
