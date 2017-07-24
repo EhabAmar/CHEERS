@@ -1,15 +1,31 @@
-class MathOperation():
+
+class MathOperation:
+    """
+    This class is responsible for performing various math operations need for the project
+    """
+
     PRECISION = 9
-#method to calculate the value of a exponential number
+
     @staticmethod
     def powers(base=float, exp=int):
+        """
+        This method is responsible for calculating the exponential number
+        :param base: float
+        :param exp: int
+        :return: float value
+        """
         result = 1.0;
         for i in range(0, exp):
             result *= base
         return result;
-#method for performing the factorial on a given number
+
     @staticmethod
     def factorials(input=int):
+        """
+        This method for performing the factorial on a given number
+        :param input: int
+        :return: float factorial value
+        """
         if (input == 0 or input == 1):
             return 1
         else:
@@ -17,12 +33,23 @@ class MathOperation():
 
     @staticmethod
     def drange(start=float, stop=float, step=float):
+        """
+        This method is used for the computing the value of the pi
+        :param start: float
+        :param stop: float
+        :param step: float
+        :return: float value
+        """
         while start < stop:
             yield start
             start += step
-#method to calculate the value of pi
+
     @staticmethod
     def pi():
+        """
+        This method is responsible for calculating the value of pi
+        :return: float pi
+        """
         n = MathOperation.powers(10, 5);
         sign = 1.0;
         temp = 0.0;
@@ -32,9 +59,14 @@ class MathOperation():
             sign *= -1;
         pi = 3 + (4 * temp);
         return pi;
-#method to calculate the sin value
+
     @staticmethod
     def sin(input=float):
+        """
+        This method is responsible for computing the value of sin
+        :param input: float
+        :return:float sin value
+        """
         result = input;
         for i in range(1, MathOperation.PRECISION):
             if (i % 2 == 0):
@@ -42,9 +74,14 @@ class MathOperation():
             else:
                 result -= MathOperation.powers(input, 2 * i + 1) / MathOperation.factorials(2 * i + 1);
         return result
-#method to calculate the cos value
+
     @staticmethod
     def cos(input=float):
+        """
+        This method is responsible for computing the value of cos
+        :param input: float
+        :return: float cos value
+        """
         result = 1.0;
         for i in range(1, MathOperation.PRECISION):
             if (i % 2 == 0):

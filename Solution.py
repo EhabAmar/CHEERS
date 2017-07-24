@@ -1,9 +1,15 @@
 from MathOperations import MathOperation
 
-
-class Solution():
+class Solution:
+    """
+    This class is responsible for the calculation of the value of alpha and the length between the two coasters of same radius
+    """
     @staticmethod
     def alpha():
+        """
+        This static method calculates the value of alpha
+        :return:float alpha
+        """
         firstGuess = 2.0
         pi = MathOperation.pi()
         delta = firstGuess - MathOperation.sin(firstGuess) - pi / 2
@@ -16,5 +22,10 @@ class Solution():
 
     @staticmethod
     def getLenght(radius):
+        """
+        This static method calculates the length based on the value of alpha
+        :param radius:
+        :return:float length
+        """
         alpha = Solution.alpha()
         return 2.0 * radius * (1.0 - MathOperation.cos(alpha / 2))
