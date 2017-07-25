@@ -1,9 +1,15 @@
 from MathOperations import MathOperation
 
+"""
+Python file for implementing the solution of the project
+"""
+
+
 class Solution:
     """
     This class is responsible for the calculation of the value of alpha and the length between the two coasters of same radius
     """
+
     @staticmethod
     def alpha():
         """
@@ -14,8 +20,8 @@ class Solution:
         pi = MathOperation.pi()
         delta = firstGuess - MathOperation.sin(firstGuess) - pi / 2
         alpha = firstGuess
-        while (delta <= 1 / MathOperation.powers(10, 3)):
-            delta = alpha - MathOperation.sin(alpha) - pi / 2;
+        while delta <= 1 / MathOperation.powers(10, 3):
+            delta = alpha - MathOperation.sin(alpha) - pi / 2
             alpha += 1 / MathOperation.powers(10, 2)
 
         return alpha

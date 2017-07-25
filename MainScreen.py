@@ -4,13 +4,15 @@ from tkinter import *
 
 from Solution import Solution
 
+
 class MainScreen:
     """
     This class is responsible creating the frame and various components of the GUI
     """
+
     def __init__(self):
         """
-        Constructor of MainScreen class
+        Constructor for the class
         """
         self.__init_main_screen()
 
@@ -40,8 +42,7 @@ class MainScreen:
         file_menu.add_separator()
         file_menu.add_command(label="Exit", command=self.__exit)
 
-
-        menubar.add_cascade(label="File",menu=file_menu)
+        menubar.add_cascade(label="File", menu=file_menu)
 
         frame = Frame(self.__main_screen, borderwidth=2, padx=10, pady=10)
 
@@ -52,8 +53,7 @@ class MainScreen:
         self.__txt_radius.pack(side=LEFT, fill=BOTH, expand=YES, padx=12)
 
         btn_calculate = Button(frame, text="Calculate", command=self.__calculate_length)
-        btn_calculate.pack(side=LEFT, fill=NONE,expand=NO)
-
+        btn_calculate.pack(side=LEFT, fill=NONE, expand=NO)
 
         result_frame = Frame(self.__main_screen, borderwidth=2, padx=10, pady=5)
 
@@ -69,12 +69,11 @@ class MainScreen:
         scorl.pack(side=RIGHT, fill=Y)
         self.__txt_result.pack(side=TOP, fill=BOTH, expand=YES)
 
-
         frame.pack(side=TOP, fill=X, expand=YES)
         result_frame.pack(side=TOP, fill=BOTH, expand=YES)
 
         self.__main_screen.config(menu=menubar)
-        print("create item method ended")
+        print(self.__exit.__doc__)
 
     def __calculate_length(self):
         """
@@ -82,7 +81,7 @@ class MainScreen:
         :return:nothing
         """
         try:
-            if (self.__txt_radius.get() == ""):
+            if self.__txt_radius.get() == "":
                 tkMessageBox.showwarning("Invalid Output", "The radius field can't be empty")
             else:
                 length = Solution.getLenght(float(self.__txt_radius.get()))

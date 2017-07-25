@@ -2,16 +2,18 @@ from unittest import TestCase
 
 from MathOperations import MathOperation
 
+
 class TestMathOperation(TestCase):
     """
     This class is responsible for testing the method of MathOperation class
     """
+
     def test_pi(self):
         """
         Test case for testing pi method
         :return:nothing
         """
-        self.assertEqual(3.14159265359, MathOperation.pi())
+        self.assertEqual(3.141592653589793, MathOperation.pi())
 
     def test_sin(self):
         """

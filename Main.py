@@ -1,5 +1,6 @@
 from MainScreen import MainScreen
 
+
 def main():
     """
     This is the main method which call the main screen consisting of the GUI
@@ -7,6 +8,7 @@ def main():
     """
     app = MainScreen()
     app.display()
+
 
 if __name__ == '__main__':
     main()

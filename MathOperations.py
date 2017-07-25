@@ -1,3 +1,7 @@
+"""
+Python file for Math Operations
+"""
+
 
 class MathOperation:
     """
@@ -14,10 +18,10 @@ class MathOperation:
         :param exp: int
         :return: float value
         """
-        result = 1.0;
+        result = 1.0
         for i in range(0, exp):
             result *= base
-        return result;
+        return result
 
     @staticmethod
     def factorials(input=int):
@@ -26,10 +30,10 @@ class MathOperation:
         :param input: int
         :return: float factorial value
         """
-        if (input == 0 or input == 1):
+        if input == 0 or input == 1:
             return 1
         else:
-            return input * MathOperation.factorials(input - 1);
+            return input * MathOperation.factorials(input - 1)
 
     @staticmethod
     def drange(start=float, stop=float, step=float):
@@ -50,15 +54,14 @@ class MathOperation:
         This method is responsible for calculating the value of pi
         :return: float pi
         """
-        n = MathOperation.powers(10, 5);
-        sign = 1.0;
-        temp = 0.0;
-        pi = 0.0;
+        n = MathOperation.powers(10, 5)
+        sign = 1.0
+        temp = 0.0
         for i in MathOperation.drange(2.0, n, 2.0):
-            temp = temp + sign * (1 / (i * (i + 1) * (i + 2)));
-            sign *= -1;
-        pi = 3 + (4 * temp);
-        return pi;
+            temp = temp + sign * (1 / (i * (i + 1) * (i + 2)))
+            sign *= -1
+        pi = 3 + (4 * temp)
+        return pi
 
     @staticmethod
     def sin(input=float):
@@ -67,12 +70,12 @@ class MathOperation:
         :param input: float
         :return:float sin value
         """
-        result = input;
+        result = input
         for i in range(1, MathOperation.PRECISION):
-            if (i % 2 == 0):
-                result += MathOperation.powers(input, 2 * i + 1) / MathOperation.factorials(2 * i + 1);
+            if i % 2 == 0:
+                result += MathOperation.powers(input, 2 * i + 1) / MathOperation.factorials(2 * i + 1)
             else:
-                result -= MathOperation.powers(input, 2 * i + 1) / MathOperation.factorials(2 * i + 1);
+                result -= MathOperation.powers(input, 2 * i + 1) / MathOperation.factorials(2 * i + 1)
         return result
 
     @staticmethod
@@ -82,10 +85,10 @@ class MathOperation:
         :param input: float
         :return: float cos value
         """
-        result = 1.0;
+        result = 1.0
         for i in range(1, MathOperation.PRECISION):
-            if (i % 2 == 0):
-                result += MathOperation.powers(input, 2 * i) / MathOperation.factorials(2 * i);
+            if i % 2 == 0:
+                result += MathOperation.powers(input, 2 * i) / MathOperation.factorials(2 * i)
             else:
-                result -= MathOperation.powers(input, 2 * i) / MathOperation.factorials(2 * i);
+                result -= MathOperation.powers(input, 2 * i) / MathOperation.factorials(2 * i)
         return result
