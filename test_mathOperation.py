@@ -37,7 +37,7 @@ class TestMathOperation(TestCase):
         """
         self.assertEqual(0.5403023058681398, MathOperation.cos(1.0))
 
-    def test_cos_negativevalue(self):
+    def test_cos_negative_value(self):
         """
         Test case for testing cos method against negative value
         :return:nothing

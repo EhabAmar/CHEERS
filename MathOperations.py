@@ -24,19 +24,19 @@ class MathOperation:
         return result
 
     @staticmethod
-    def factorials(input=int):
+    def __factorials(value=int):
         """
         This method for performing the factorial on a given number
-        :param input: int
+        :param value: int
         :return: float factorial value
         """
-        if input == 0 or input == 1:
+        if value == 0 or value == 1:
             return 1
         else:
-            return input * MathOperation.factorials(input - 1)
+            return value * MathOperation.__factorials(value - 1)
 
     @staticmethod
-    def drange(start=float, stop=float, step=float):
+    def __d_range(start=float, stop=float, step=float):
         """
         This method is used for the computing the value of the pi
         :param start: float
@@ -57,38 +57,38 @@ class MathOperation:
         n = MathOperation.powers(10, 5)
         sign = 1.0
         temp = 0.0
-        for i in MathOperation.drange(2.0, n, 2.0):
+        for i in MathOperation.__d_range(2.0, n, 2.0):
             temp = temp + sign * (1 / (i * (i + 1) * (i + 2)))
             sign *= -1
         pi = 3 + (4 * temp)
         return pi
 
     @staticmethod
-    def sin(input=float):
+    def sin(value=float):
         """
         This method is responsible for computing the value of sin
-        :param input: float
+        :param value: float
         :return:float sin value
         """
-        result = input
+        result = value
         for i in range(1, MathOperation.PRECISION):
             if i % 2 == 0:
-                result += MathOperation.powers(input, 2 * i + 1) / MathOperation.factorials(2 * i + 1)
+                result += MathOperation.powers(value, 2 * i + 1) / MathOperation.__factorials(2 * i + 1)
             else:
-                result -= MathOperation.powers(input, 2 * i + 1) / MathOperation.factorials(2 * i + 1)
+                result -= MathOperation.powers(value, 2 * i + 1) / MathOperation.__factorials(2 * i + 1)
         return result
 
     @staticmethod
-    def cos(input=float):
+    def cos(value=float):
         """
         This method is responsible for computing the value of cos
-        :param input: float
+        :param value: float
         :return: float cos value
         """
         result = 1.0
         for i in range(1, MathOperation.PRECISION):
             if i % 2 == 0:
-                result += MathOperation.powers(input, 2 * i) / MathOperation.factorials(2 * i)
+                result += MathOperation.powers(value, 2 * i) / MathOperation.__factorials(2 * i)
             else:
-                result -= MathOperation.powers(input, 2 * i) / MathOperation.factorials(2 * i)
+                result -= MathOperation.powers(value, 2 * i) / MathOperation.__factorials(2 * i)
         return result
